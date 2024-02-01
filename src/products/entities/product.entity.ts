@@ -10,6 +10,6 @@ export class Product {
   description: string;
   @Column()
   image_url: string;
-  @Column()
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
   price: number;
 }
