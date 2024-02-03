@@ -38,6 +38,8 @@ export class OrdersService {
         };
       }),
     });
+
+    
     await this.orderRepo.save(order);
     await this.amqpConnection.publish('amq.direct', 'OrderCreated', {
       order_id: order.id,
